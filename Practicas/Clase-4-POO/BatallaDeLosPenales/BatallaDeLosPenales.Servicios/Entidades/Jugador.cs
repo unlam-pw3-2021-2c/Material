@@ -19,6 +19,18 @@ namespace BatallaDeLosPenales.Servicios.Entidades
             }
         }
 
+        public Jugador()
+        {
+
+        }
+        public Jugador(int id, string nombre, string apellido, bool expulsado)
+        {
+            Id = id;
+            Nombre = nombre;
+            Apellido = apellido;
+            Expulsado = expulsado;
+        }
+
         private int PuntosExpulsado()
         {
             return (Expulsado ? 50 : 0);

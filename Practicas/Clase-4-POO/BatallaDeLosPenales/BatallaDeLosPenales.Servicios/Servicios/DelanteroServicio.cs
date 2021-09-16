@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BatallaDeLosPenales.Servicios.Servicios
 {
-    public class DelanteroServicio : EntidadesManager<Arquero>
+    public class DelanteroServicio : EntidadesManager<Delantero>
     {
       
     }
