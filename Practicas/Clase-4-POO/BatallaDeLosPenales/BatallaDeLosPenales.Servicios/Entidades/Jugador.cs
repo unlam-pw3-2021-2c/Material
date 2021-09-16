@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BatallaDeLosPenales.Servicios.Entidades
 {
-    public abstract class Jugador : IPuntuable
+    public abstract class Jugador : Entidad, IPuntuable
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }

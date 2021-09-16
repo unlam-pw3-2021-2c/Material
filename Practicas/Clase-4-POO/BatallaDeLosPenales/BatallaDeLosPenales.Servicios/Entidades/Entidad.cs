@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace BatallaDeLosPenales.Servicios.Entidades
 {
-    public class DirectorTecnico : Entidad, IPuntuable
+    public class Entidad
     {
-        public int Puntos => Jugadores.Sum(jug=> jug.Puntos);
-
-        public List<Jugador> Jugadores { get; set; }
+        public int Id { get; set; }
     }
 }
