@@ -4,33 +4,38 @@
 
 <h1 class="text-center mb-5">Alta de Director Tecnico</h1>
 
+<div>
+    <h2 class="text-center mb-5">@ViewBag.DirectorTecnicoAgregado</h2>
+    <h2 class="text-center mb-5">@ViewBag.DirectorTecnicoNoAgregado</h2>
+</div>
+
 <form action="/alta/procesarDirectorTecnico" method="post">
     <div class="col-6 mx-auto form-group d-flex flex-column">
         <label for="nombreUsuario">Nombre de usuario</label>
         <input class="form-control mb-4" type="text" name="NombreUsuario" id="nombreUsuario" required />
 
         <label for="arquero">Seleccionar arquero:</label>
-        <select class="custom-select mb-4" id="arquero">
-            <option value="arquero1">Arquero 1</option>
-            <option value="arquero2">Arquero 2</option>
-            <option value="arquero3">Arquero 3</option>
-            <option value="arquero4">Arquero 4</option>
+        <select class="custom-select mb-4" name="Arquero" id="arquero" required>
+            @foreach (var arquero in ViewBag.Arqueros)
+            {
+                <option value="@arquero.Id">@arquero.Nombre @arquero.Apellido</option>
+            }
         </select>
 
         <label for="delantero1">Seleccionar primer delantero:</label>
-        <select class="custom-select mb-4" id="delantero1">
-            <option value="delantero1">Delantero 1</option>
-            <option value="delantero2">Delantero 2</option>
-            <option value="delantero3">Delantero 3</option>
-            <option value="delantero4">Delantero 4</option>
+        <select class="custom-select mb-4" name="Delantero1" id="delantero1" required>
+            @foreach (var delantero in ViewBag.Delanteros)
+            {
+                <option value="@delantero.Id">@delantero.Nombre @delantero.Apellido</option>
+            }
         </select>
 
         <label for="delantero2">Seleccionar segundo delantero:</label>
-        <select class="custom-select mb-4" id="delantero2">
-            <option value="delantero2-1">Delantero 1</option>
-            <option value="delantero2-2">Delantero 2</option>
-            <option value="delantero2-3">Delantero 3</option>
-            <option value="delantero2-4">Delantero 4</option>
+        <select class="custom-select mb-4" name="Delantero2" id="delantero2" required>
+            @foreach (var delantero in ViewBag.Delanteros)
+            {
+                <option value="@delantero.Id">@delantero.Nombre @delantero.Apellido</option>
+            }
         </select>
 
         <input class="btn btn-primary" type="submit" value="Crear" />
