@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Alta de Arquero";
+}
+
+<h1 class="text-center mb-4">Alta de Arquero</h1>
+
+<div>
+    <h2 class="text-center mb-5">@ViewBag.ArqueroAgregado</h2>
+    <h2 class="text-center mb-5">@ViewBag.ArqueroNoAgregado</h2>
+</div>
+
+<form action="/alta/procesarArquero" method="post">
+    <div class="col-6 mx-auto form-group d-flex flex-column">
+        <label for="nombre">Nombre</label>
+        <input class="form-control mb-4" type="text" name="Nombre" id="nombre" required />
+
+        <label for="apellido">Apellido</label>
+        <input class="form-control mb-4" type="text" name="Apellido" id="apellido" required />
+
+        <label>¿Expulsado?</label>
+        <div class="mb-4">
+            <label for="expulsadoSi">Si</label>
+            <input class="mr-4" type="radio" name="Expulsado" value="si" required />
+
+            <label for="expulsadoNo">No</label>
+            <input type="radio" name="Expulsado" value="no" required />
+        </div>
+
+
+        <label for="penalesAtajados">Penales atajados</label>
+        <input class="form-control mb-4" min="0" type="number" name="PenalesAtajados" id="penalesAtajados" required />
+
+        <input class="btn btn-primary" type="submit" value="Crear Arquero" />
+    </div>
+</form>

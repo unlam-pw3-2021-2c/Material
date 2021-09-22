@@ -9,6 +9,6 @@ namespace BatallaDeLosPenales.Servicios.Servicios
 {
     public class ArqueroServicio : EntidadesManager<Arquero>
     {
-      
+		
     }
 }

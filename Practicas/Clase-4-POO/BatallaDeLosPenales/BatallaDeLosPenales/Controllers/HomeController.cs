@@ -23,7 +23,17 @@ namespace BatallaDeLosPenales.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+		public IActionResult Ganador()
+		{
+			return View();
+		}
+
+		public IActionResult DirectoresTecnicos()
+		{
+			return View();
+		}
+
+		public IActionResult Privacy()
         {
             return View();
         }
