@@ -1,7 +1,34 @@
-﻿
+﻿@model IEnumerable<BatallaDeLosPenales.Servicios.Entidades.DirectorTecnico>
+
 @{
-    ViewData["Title"] = "DirectoresTecnicos";
+    ViewData["Title"] = "Directores Tecnicos";
 }
 
-<h1>DirectoresTecnicos</h1>
+<h1 class="text-center my-4">Lista de directores tecnicos</h1>
 
+<table class="table col-10 mx-auto">
+    <thead>
+        <tr>
+            <th>
+                Nombre de usuario
+            </th>
+            <th>
+                Puntos batalla de los penales
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Puntos)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

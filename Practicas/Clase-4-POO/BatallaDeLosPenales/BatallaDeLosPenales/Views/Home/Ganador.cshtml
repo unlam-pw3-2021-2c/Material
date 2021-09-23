@@ -1,7 +1,19 @@
-﻿
+﻿@model BatallaDeLosPenales.Servicios.Entidades.DirectorTecnico
+
 @{
     ViewData["Title"] = "Ganador";
+    var arquero = @Model.ObtenerJugadores()[0];
+    var delantero1 = @Model.ObtenerJugadores()[1];
+    var delantero2 = @Model.ObtenerJugadores()[2];
 }
 
-<h1>Ganador</h1>
+<h1 class="text-center mb-5 mt-2">El ganador es:</h1>
 
+<div class="col-10 mx-auto d-flex flex-column">
+    <h4>DT Ganador: <span class="font-weight-normal">@Model.NombreUsuario</span></h4>
+    <h4 class="mb-4">Puntos Totales: <span class="font-weight-normal">@Model.Puntos</span></h4>
+
+    <h4>Arquero: <span class="font-weight-normal">@arquero.Apellido, @arquero.Nombre (@arquero.Puntos puntos)</span></h4>
+    <h4>Delantero1: <span class="font-weight-normal">@delantero1.Apellido, @delantero1.Nombre (@delantero1.Puntos puntos)</span></h4>
+    <h4>Delantero2: <span class="font-weight-normal">@delantero2.Apellido, @delantero2.Nombre (@delantero2.Puntos puntos)</span></h4>
+</div>

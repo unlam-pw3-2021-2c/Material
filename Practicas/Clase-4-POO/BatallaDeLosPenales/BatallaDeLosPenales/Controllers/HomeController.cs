@@ -1,4 +1,5 @@
 ﻿using BatallaDeLosPenales.Models;
+using BatallaDeLosPenales.Servicios.Servicios;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -25,12 +26,12 @@ namespace BatallaDeLosPenales.Controllers
 
 		public IActionResult Ganador()
 		{
-			return View();
+			return View(DirectorTecnicoServicio.ObtenerTecnicoGanador());
 		}
 
 		public IActionResult DirectoresTecnicos()
 		{
-			return View();
+			return View(DirectorTecnicoServicio.ObtenerTodos().OrderBy(dt => dt.NombreUsuario).ToList());
 		}
 
 		public IActionResult Privacy()

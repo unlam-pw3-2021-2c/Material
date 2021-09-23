@@ -14,5 +14,11 @@ namespace BatallaDeLosPenales.Servicios.Servicios
             int maxPuntos = Lista.Max(o => o.Puntos);
             return Lista.Where(o => o.Puntos == maxPuntos).ToList();
         }
-    }
+
+		public static DirectorTecnico ObtenerTecnicoGanador()
+		{
+			int maxPuntos = Lista.Max(o => o.Puntos);
+			return Lista.First(o => o.Puntos == maxPuntos);
+		}
+	}
 }
