@@ -1,4 +1,5 @@
 ﻿using BatallaDeLosPenales.Models;
+using BatallaDeLosPenales.Servicios.Servicios;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -23,7 +24,25 @@ namespace BatallaDeLosPenales.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+		public IActionResult Ganador()
+		{
+			try
+			{
+				return View(DirectorTecnicoServicio.ObtenerTecnicoGanador());
+			}
+			catch (Exception)
+			{
+				ViewBag.NoGanador = "Todavia no hay directores tecnicos agregados, no hay ganador";
+				return View();
+			}
+		}
+
+		public IActionResult DirectoresTecnicos()
+		{
+			return View(DirectorTecnicoServicio.ObtenerTodos().OrderBy(dt => dt.NombreUsuario).ToList());
+		}
+
+		public IActionResult Privacy()
         {
             return View();
         }

@@ -23,7 +23,15 @@ namespace BatallaDeLosPenales.Servicios.Entidades
         {
 
         }
-        public Jugador(int id, string nombre, string apellido, bool expulsado)
+
+		public Jugador(string nombre, string apellido, bool expulsado)
+		{
+			Nombre = nombre;
+			Apellido = apellido;
+			Expulsado = expulsado;
+		}
+
+		public Jugador(int id, string nombre, string apellido, bool expulsado)
         {
             Id = id;
             Nombre = nombre;
