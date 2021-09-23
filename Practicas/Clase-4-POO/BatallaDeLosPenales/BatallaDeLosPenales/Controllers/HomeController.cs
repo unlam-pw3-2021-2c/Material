@@ -26,7 +26,15 @@ namespace BatallaDeLosPenales.Controllers
 
 		public IActionResult Ganador()
 		{
-			return View(DirectorTecnicoServicio.ObtenerTecnicoGanador());
+			try
+			{
+				return View(DirectorTecnicoServicio.ObtenerTecnicoGanador());
+			}
+			catch (Exception)
+			{
+				ViewBag.NoGanador = "Todavia no hay directores tecnicos agregados, no hay ganador";
+				return View();
+			}
 		}
 
 		public IActionResult DirectoresTecnicos()
