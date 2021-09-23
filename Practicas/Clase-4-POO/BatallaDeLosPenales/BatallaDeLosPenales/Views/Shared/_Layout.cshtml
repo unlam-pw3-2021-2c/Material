@@ -18,14 +18,15 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Alta" asp-action="Arquero">Alta de Arquero</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Alta" asp-action="Delantero">Alta de Delantero</a>
-                        </li>
-                        <li class="nav-item mr-3">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Alta" asp-action="DirectorTecnico">Alta de Director Tecnico</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Generar alta de:
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Alta" asp-action="Arquero">Arquero</a>
+                                <a class="dropdown-item" asp-controller="Alta" asp-action="Delantero">Delantero</a>
+                                <a class="dropdown-item" asp-controller="Alta" asp-action="DirectorTecnico">Director Tecnico</a>
+                            </div>
                         </li>
 
                         <li class="nav-item">
