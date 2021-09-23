@@ -1,4 +1,5 @@
 ﻿using BatallaDeLosPenales.Models;
+using BatallaDeLosPenales.Servicios.Entidades;
 using BatallaDeLosPenales.Servicios.Servicios;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -39,7 +40,16 @@ namespace BatallaDeLosPenales.Controllers
 
 		public IActionResult DirectoresTecnicos()
 		{
-			return View(DirectorTecnicoServicio.ObtenerTodos().OrderBy(dt => dt.NombreUsuario).ToList());
+			List<DirectorTecnico> directoresTecnicos = DirectorTecnicoServicio.ObtenerTodos().OrderBy(dt => dt.NombreUsuario).ToList();
+			
+			if (directoresTecnicos.Count == 0)
+			{
+				ViewBag.NoHayDirectoresTecnicos = "Todavia no hay directores tecnicos agregados";
+				return View();
+			} else
+			{
+				return View(directoresTecnicos);
+			}
 		}
 
 		public IActionResult Privacy()
