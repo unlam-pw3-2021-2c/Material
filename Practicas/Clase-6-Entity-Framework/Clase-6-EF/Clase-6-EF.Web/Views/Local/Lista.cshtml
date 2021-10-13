@@ -1,0 +1,23 @@
+﻿@model List<Clase_6_EF.Data.EF.Local>
+
+@{
+    ViewData["Title"] = "Lista de locales";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Locales</h1>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+        </tr>
+        @foreach (var local in Model)
+        {
+            <tr>
+                <td>@local.Nombre</td>
+                <td>@local.Direccion</td>
+            </tr>
+        }
+    </table>
+</div>
