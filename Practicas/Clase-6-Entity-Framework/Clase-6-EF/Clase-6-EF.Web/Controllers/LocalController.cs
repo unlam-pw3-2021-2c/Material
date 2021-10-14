@@ -49,5 +49,26 @@ namespace Clase_6_EF.Web.Controllers
             _localServicio.Borrar(id);
             return Redirect("/local/lista");
         }
+
+        [HttpGet]
+        public ActionResult Modificar(int id)
+        {
+            try
+            {
+                Local local = _localServicio.ObtenerPorId(id);
+                return View(local);
+            }
+            catch (ArgumentException)
+            {
+                return Redirect("/local/lista");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Modificar(Local local)
+        {
+            _localServicio.Modificar(local);
+            return Redirect("/local/lista");
+        }
     }
 }

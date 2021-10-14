@@ -13,7 +13,6 @@ namespace Clase_6_EF.Data.Repositorios.Interfaces
         public void Agregar(Local local);
         public Local ObtenerPorId(int idLocal);
         public void Borrar(Local local);
-
         public void SaveChanges();
     }
 }

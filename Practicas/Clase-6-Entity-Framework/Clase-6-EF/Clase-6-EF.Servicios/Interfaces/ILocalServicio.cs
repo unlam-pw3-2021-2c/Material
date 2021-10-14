@@ -13,5 +13,7 @@ namespace Clase_6_EF.Servicios.Interfaces
         public void Agregar(Local local);
         public Local ObtenerPorId(int idLocal);
         public void Borrar(int idLocal);
+        public void SaveChanges();
+        public void Modificar(Local local);
     }
 }
