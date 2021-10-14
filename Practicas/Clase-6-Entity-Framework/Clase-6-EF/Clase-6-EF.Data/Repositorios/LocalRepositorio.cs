@@ -22,5 +22,15 @@ namespace Clase_6_EF.Data.Repositorios
             return _ctx.Locals.OrderBy(o=> o.Nombre).ToList();
         }
 
+        public void Agregar(Local local)
+        {
+            _ctx.Locals.Add(local);
+        }
+
+        public void SaveChanges()
+        {
+            _ctx.SaveChanges();
+        }
+
     }
 }

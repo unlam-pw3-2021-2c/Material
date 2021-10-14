@@ -10,5 +10,7 @@ namespace Clase_6_EF.Data.Repositorios.Interfaces
     public interface ILocalRepositorio
     {
         public List<Local> ObtenerTodos();
+        public void Agregar(Local local);
+        public void SaveChanges();
     }
 }

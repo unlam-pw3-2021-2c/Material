@@ -30,5 +30,17 @@ namespace Clase_6_EF.Web.Controllers
             return View(locales);
         }
 
+        [HttpGet]
+        public ActionResult Agregar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Agregar(Local local)
+        {
+            _localServicio.Agregar(local);
+            return Redirect("/local/lista");
+        }
     }
 }

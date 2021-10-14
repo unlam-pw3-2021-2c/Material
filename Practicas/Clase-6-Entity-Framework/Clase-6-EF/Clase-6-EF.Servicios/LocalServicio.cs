@@ -20,5 +20,11 @@ namespace Clase_6_EF.Servicios
         {
             return _localRepo.ObtenerTodos();
         }
+
+        public void Agregar(Local local)
+        {
+            _localRepo.Agregar(local);
+            _localRepo.SaveChanges();
+        }
     }
 }

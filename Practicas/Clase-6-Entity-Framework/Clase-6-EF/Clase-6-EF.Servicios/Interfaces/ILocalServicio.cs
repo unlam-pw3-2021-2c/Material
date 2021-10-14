@@ -10,5 +10,6 @@ namespace Clase_6_EF.Servicios.Interfaces
     public interface ILocalServicio
     {
         public List<Local> ObtenerTodos();
+        public void Agregar(Local local);
     }
 }
