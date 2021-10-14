@@ -1,3 +1,8 @@
+using Clase_6_EF.Data.EF;
+using Clase_6_EF.Data.Repositorios;
+using Clase_6_EF.Data.Repositorios.Interfaces;
+using Clase_6_EF.Servicios;
+using Clase_6_EF.Servicios.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +28,10 @@ namespace Clase_6_EF.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<Db_TiendaContext>();
+            services.AddScoped<ILocalRepositorio, LocalRepositorio>();
+            services.AddScoped<ILocalServicio, LocalServicio>();
+
             services.AddControllersWithViews();
         }
 

@@ -1,4 +1,5 @@
 ﻿using Clase_6_EF.Data.EF;
+using Clase_6_EF.Data.Repositorios.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Clase_6_EF.Data.Repositorios
 {
-    public class LocalRepositorio
+    public class LocalRepositorio : ILocalRepositorio
     {
         private Db_TiendaContext _ctx;
 

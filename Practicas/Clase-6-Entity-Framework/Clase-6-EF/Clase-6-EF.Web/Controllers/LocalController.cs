@@ -1,5 +1,6 @@
 ﻿using Clase_6_EF.Data.EF;
 using Clase_6_EF.Servicios;
+using Clase_6_EF.Servicios.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,14 +12,20 @@ namespace Clase_6_EF.Web.Controllers
 {
     public class LocalController : Controller
     {
+        private ILocalServicio _localServicio;
+
+        public LocalController(ILocalServicio localServicio)
+        {
+            _localServicio = localServicio;
+        }
         // GET: LocalController
         public ActionResult Lista()
         {
-            Db_TiendaContext ctx = new Db_TiendaContext();
-            Data.Repositorios.LocalRepositorio localRepo = new Data.Repositorios.LocalRepositorio(ctx);
-            LocalServicio localServicio = new LocalServicio(localRepo);
+            //Db_TiendaContext ctx = new Db_TiendaContext();
+            //Data.Repositorios.LocalRepositorio localRepo = new Data.Repositorios.LocalRepositorio(ctx);
+            //LocalServicio localServicio = new LocalServicio(localRepo);
 
-            List<Local> locales = localServicio.ObtenerTodos();
+            List<Local> locales = _localServicio.ObtenerTodos();
 
             return View(locales);
         }
