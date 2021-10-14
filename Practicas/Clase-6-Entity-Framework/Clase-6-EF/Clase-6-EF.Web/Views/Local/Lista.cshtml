@@ -6,7 +6,10 @@
 
 <div class="text-center">
     <h1 class="display-4">Locales</h1>
-
+    @if (ViewBag.Operaciones != null)
+    {
+        <h2>@ViewBag.Operaciones</h2>
+    }
     <table>
         <tr>
             <th>Nombre</th>

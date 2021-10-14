@@ -3,8 +3,10 @@ using Clase_6_EF.Data.Repositorios;
 using Clase_6_EF.Data.Repositorios.Interfaces;
 using Clase_6_EF.Servicios;
 using Clase_6_EF.Servicios.Interfaces;
+using Clase_6_EF.Web.Logic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,8 +33,14 @@ namespace Clase_6_EF.Web
             services.AddTransient<Db_TiendaContext>();
             services.AddScoped<ILocalRepositorio, LocalRepositorio>();
             services.AddScoped<ILocalServicio, LocalServicio>();
+            services.AddScoped<IOperacionesLogic, OperacionesLogic>();
 
             services.AddControllersWithViews();
+
+            services.AddSession(options =>
+                                    options.IdleTimeout = TimeSpan.FromMinutes(10)
+                                );
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +62,8 @@ namespace Clase_6_EF.Web
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,6 +1,7 @@
 ﻿using Clase_6_EF.Data.EF;
 using Clase_6_EF.Servicios;
 using Clase_6_EF.Servicios.Interfaces;
+using Clase_6_EF.Web.Logic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,10 +14,12 @@ namespace Clase_6_EF.Web.Controllers
     public class LocalController : Controller
     {
         private ILocalServicio _localServicio;
+        private IOperacionesLogic _operacionesLogic;
 
-        public LocalController(ILocalServicio localServicio)
+        public LocalController(ILocalServicio localServicio, IOperacionesLogic operacionesLogic)
         {
             _localServicio = localServicio;
+            _operacionesLogic = operacionesLogic;
         }
         // GET: LocalController
         public ActionResult Lista()
@@ -26,7 +29,7 @@ namespace Clase_6_EF.Web.Controllers
             //LocalServicio localServicio = new LocalServicio(localRepo);
 
             List<Local> locales = _localServicio.ObtenerTodos();
-
+            ViewBag.Operaciones = _operacionesLogic.Obtener();
             return View(locales);
         }
 
@@ -40,6 +43,7 @@ namespace Clase_6_EF.Web.Controllers
         public ActionResult Agregar(Local local)
         {
             _localServicio.Agregar(local);
+            _operacionesLogic.Agregar($"Local {local.Nombre} agregado con éxito.");
             return Redirect("/local/lista");
         }
 
