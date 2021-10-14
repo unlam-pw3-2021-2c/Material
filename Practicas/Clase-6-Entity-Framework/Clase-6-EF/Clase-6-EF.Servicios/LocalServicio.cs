@@ -26,5 +26,19 @@ namespace Clase_6_EF.Servicios
             _localRepo.Agregar(local);
             _localRepo.SaveChanges();
         }
+
+        public Local ObtenerPorId(int idLocal)
+        {
+           return _localRepo.ObtenerPorId(idLocal);
+        }
+        public void Borrar(int idLocal)
+        {
+            Local local = ObtenerPorId(idLocal);
+            if (local == null)
+                throw new ArgumentException("No se puede borrar el local, ya que no se encuentra disponible.");
+            
+            _localRepo.Borrar(local);
+            _localRepo.SaveChanges();
+        }
     }
 }

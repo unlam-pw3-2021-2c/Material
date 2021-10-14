@@ -27,6 +27,16 @@ namespace Clase_6_EF.Data.Repositorios
             _ctx.Locals.Add(local);
         }
 
+        public Local ObtenerPorId(int idLocal)
+        {
+            return _ctx.Locals.Find(idLocal);
+        }
+
+        public void Borrar(Local local)
+        {
+            _ctx.Locals.Remove(local);
+        }
+
         public void SaveChanges()
         {
             _ctx.SaveChanges();

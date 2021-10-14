@@ -11,5 +11,7 @@ namespace Clase_6_EF.Servicios.Interfaces
     {
         public List<Local> ObtenerTodos();
         public void Agregar(Local local);
+        public Local ObtenerPorId(int idLocal);
+        public void Borrar(int idLocal);
     }
 }

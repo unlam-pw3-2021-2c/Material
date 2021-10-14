@@ -11,12 +11,14 @@
         <tr>
             <th>Nombre</th>
             <th>Direccion</th>
+            <th>Operaciones</th>
         </tr>
         @foreach (var local in Model)
         {
             <tr>
                 <td>@local.Nombre</td>
                 <td>@local.Direccion</td>
+                <td><a href="/local/borrar/@local.IdLocal">Borrar</a></td>
             </tr>
         }
     </table>

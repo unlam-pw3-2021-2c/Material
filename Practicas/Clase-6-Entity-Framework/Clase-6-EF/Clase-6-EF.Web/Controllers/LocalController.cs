@@ -42,5 +42,12 @@ namespace Clase_6_EF.Web.Controllers
             _localServicio.Agregar(local);
             return Redirect("/local/lista");
         }
+
+        [HttpGet]
+        public ActionResult Borrar(int id)
+        {
+            _localServicio.Borrar(id);
+            return Redirect("/local/lista");
+        }
     }
 }
