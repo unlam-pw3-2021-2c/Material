@@ -22,5 +22,11 @@ namespace Servicios
         {
             return _ctx.Perros.Where(p=> p.Edad < edad).OrderBy(p=> p.Nombre).ToList();
         }
+
+        public void Crear(Perro perro)
+        {
+            _ctx.Perros.Add(perro);
+            _ctx.SaveChanges();
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace Servicios
     {
         List<Perro> ObtenerTodos();
         List<Perro> ObtenerMenores(int edad);
+        void Crear(Perro perro);
     }
 }
