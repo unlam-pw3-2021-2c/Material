@@ -31,6 +31,10 @@ namespace WebApi
             services.AddTransient<_20212cEjemplo2ParcialContext>();
             services.AddTransient<IPerroService, PerroService>();
             services.AddControllers();
+
+            //services.AddControllers().AddJsonOptions(x =>
+            //    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });

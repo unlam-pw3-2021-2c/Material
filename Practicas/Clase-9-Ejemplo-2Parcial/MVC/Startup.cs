@@ -27,6 +27,7 @@ namespace MVC
         {
             services.AddTransient<_20212cEjemplo2ParcialContext>();
             services.AddTransient<IPerroService, PerroService>();
+            services.AddTransient<IRazaService, RazaService>();
             services.AddControllersWithViews();
         }
 

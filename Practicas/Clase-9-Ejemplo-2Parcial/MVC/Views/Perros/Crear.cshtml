@@ -15,6 +15,15 @@
             Edad: <input type="text" name="Edad" value="" />
         </div>
         <div>
+            <select name="IdRaza">
+                @foreach (BD.EF.Raza raza in ViewBag.Razas)
+                {
+                    <option value="@raza.IdRaza">@raza.Nombre</option>
+                }
+            </select>
+        </div>
+
+        <div>
             <input type="submit" name="Agregar" value="Agregar" />
         </div>
     </form>

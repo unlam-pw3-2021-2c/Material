@@ -12,12 +12,15 @@ namespace MVC.Controllers
     public class PerrosController : Controller
     {
         private IPerroService _perroService;
-        public PerrosController(IPerroService perroService)
+        private IRazaService _razaService;
+        public PerrosController(IPerroService perroService, IRazaService razaService)
         {
             _perroService = perroService;
+            _razaService = razaService;
         }
         public ActionResult Crear()
         {
+            ViewBag.Razas = _razaService.ObtenerTodos();
             return View();
         }
 
@@ -27,7 +30,6 @@ namespace MVC.Controllers
         {
             try
             {
-                perro.IdRaza = 1;
                 _perroService.Crear(perro);
                 return RedirectToAction(nameof(Index));
             }
