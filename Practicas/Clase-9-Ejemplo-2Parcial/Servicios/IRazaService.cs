@@ -11,5 +11,7 @@ namespace Servicios
     {
         List<Raza> ObtenerTodos();
         void Crear(Raza raza);
+        List<PerrosPorRaza> PerrosPorRaza();
+
     }
 }

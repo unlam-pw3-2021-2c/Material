@@ -20,6 +20,7 @@ namespace MVC.Controllers
         }
         public ActionResult Crear()
         {
+            //_razaService.PerrosPorRaza();
             ViewBag.Razas = _razaService.ObtenerTodos();
             return View();
         }
