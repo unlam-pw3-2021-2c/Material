@@ -10,5 +10,6 @@ namespace Servicios
     public interface IRazaService
     {
         List<Raza> ObtenerTodos();
+        void Crear(Raza raza);
     }
 }

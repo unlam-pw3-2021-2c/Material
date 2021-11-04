@@ -30,6 +30,14 @@ namespace MVC.Controllers
         {
             try
             {
+                string otraRaza = Request.Form["otraRaza"];
+                if (!string.IsNullOrEmpty(otraRaza))
+                {
+                    Raza nuevaRaza = new Raza();
+                    nuevaRaza.Nombre = otraRaza;
+                    _razaService.Crear(nuevaRaza);
+                    perro.IdRaza = nuevaRaza.IdRaza;
+                }
                 _perroService.Crear(perro);
                 return RedirectToAction(nameof(Index));
             }

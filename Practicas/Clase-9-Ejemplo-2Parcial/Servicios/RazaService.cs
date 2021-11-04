@@ -15,7 +15,13 @@ namespace Servicios
 
         public List<Raza> ObtenerTodos()
         {
-            return _ctx.Razas.OrderBy(p=> p.Nombre).ToList();
+            return _ctx.Razas.OrderBy(p => p.Nombre).ToList();
+        }
+
+        public void Crear(Raza raza)
+        {
+            _ctx.Razas.Add(raza);
+            _ctx.SaveChanges();
         }
     }
 }
