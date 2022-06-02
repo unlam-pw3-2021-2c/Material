@@ -1,0 +1,30 @@
+﻿@model List<Clase_6_EF.Data.EF.Prendum>
+@{
+    ViewData["Title"] = "Lista de prendas";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Prendas</h1>
+
+    <table>
+        <tr>
+            <th>Talle</th>
+            <th>Color</th>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Tela</th>
+            <th>Temporada</th>
+        </tr>
+        @foreach (var prenda in Model)
+        {
+            <tr>
+                <td>@prenda.Talle</td>
+                <td>@prenda.Color</td>
+                <td>@prenda.Modelo</td>
+                <td>@prenda.Marca</td>
+                <td>@prenda.Tela</td>
+                <td>@prenda.Temporada</td>
+            </tr>
+        }
+    </table>
+</div>
