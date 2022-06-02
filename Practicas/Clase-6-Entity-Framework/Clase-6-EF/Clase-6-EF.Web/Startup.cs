@@ -32,7 +32,9 @@ namespace Clase_6_EF.Web
         {
             services.AddTransient<Db_TiendaContext>();
             services.AddScoped<ILocalRepositorio, LocalRepositorio>();
+            services.AddScoped<IPrendaRepositorio, PrendaRepositorio>();
             services.AddScoped<ILocalServicio, LocalServicio>();
+            services.AddScoped<IPrendaServicio, PrendaServicio>();
             services.AddScoped<IOperacionesLogic, OperacionesLogic>();
 
             services.AddControllersWithViews();
