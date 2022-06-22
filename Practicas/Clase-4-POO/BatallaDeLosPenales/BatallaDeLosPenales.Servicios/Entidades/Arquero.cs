@@ -9,11 +9,18 @@ namespace BatallaDeLosPenales.Servicios.Entidades
     public class Arquero : Jugador
     {
         public int PenalesAtajados { get; private set; }
+
         public Arquero()
         {
 
         }
-        public Arquero(int id, string nombre, string apellido, bool expulsado, int penalesAtajados) : base(id, nombre, apellido, expulsado)
+
+		public Arquero(string nombre, string apellido, bool expulsado, int penalesAtajados) : base(nombre, apellido, expulsado)
+		{
+			PenalesAtajados = penalesAtajados;
+		}
+
+		public Arquero(int id, string nombre, string apellido, bool expulsado, int penalesAtajados) : base(id, nombre, apellido, expulsado)
         {
             PenalesAtajados = penalesAtajados;
         }

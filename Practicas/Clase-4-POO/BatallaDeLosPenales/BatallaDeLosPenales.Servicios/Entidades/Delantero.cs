@@ -14,7 +14,13 @@ namespace BatallaDeLosPenales.Servicios.Entidades
         {
 
         }
-        public Delantero(int id, string nombre, string apellido, bool expulsado, int penalesConvertidos) : base(id, nombre, apellido, expulsado)
+
+		public Delantero(string nombre, string apellido, bool expulsado, int penalesConvertidos) : base(nombre, apellido, expulsado)
+		{
+			PenalesConvertidos = penalesConvertidos;
+		}
+
+		public Delantero(int id, string nombre, string apellido, bool expulsado, int penalesConvertidos) : base(id, nombre, apellido, expulsado)
         {
             PenalesConvertidos = penalesConvertidos;
         }
